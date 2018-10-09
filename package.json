@@ -1,7 +1,7 @@
 {
-  "name": "hashs",
+  "name": "revealjs-boilerplate",
   "version": "1.0.0",
-  "description": "Presentation about Hashs",
+  "description": "Create presentations with reveal.js",
   "main": "index.js",
   "scripts": {
     "build": "webpack -d",
