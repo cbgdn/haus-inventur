@@ -6,9 +6,10 @@
   "scripts": {
     "build": "webpack -d",
     "deploy": "webpack -p",
+    "develop": "npm-run-all --parallel watch server",
     "export": "npm-run-all --sequential deploy zip",
     "server": "http-server ./ -o --utc -a localhost --port 8080",
-    "start": "npm-run-all --parallel watch server",
+    "start": "npm-run-all --sequential build develop",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -d --watch",
     "zip": "node ./bin/export.js"
