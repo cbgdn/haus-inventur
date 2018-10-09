@@ -6,14 +6,17 @@
   "scripts": {
     "build": "webpack -d",
     "deploy": "webpack -p",
+    "export": "npm-run-all --sequential deploy zip",
     "server": "http-server ./ -o --utc -a localhost --port 8080",
     "start": "npm-run-all --parallel watch server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack -d --watch"
+    "watch": "webpack -d --watch",
+    "zip": "node ./bin/export.js"
   },
   "author": "Artur Weigandt",
   "license": "GPL-3.0",
   "devDependencies": {
+    "archiver": "^3.0.0",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
     "http-server": "^0.11.1",
