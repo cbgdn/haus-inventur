@@ -1,4 +1,4 @@
-import bar from './bar';
+import main from './main';
 import 'reveal.js/lib/js/head.min.js';
 import Reveal from 'reveal.js';
 
@@ -13,9 +13,11 @@ Reveal.initialize({
     history: true,
     transition: 'slide', // none/fade/slide/convex/concave/zoom
     dependencies: [
-		// DONT LOAD PLUGINS HERE!
+        // DONT LOAD PLUGINS HERE!
         // use require() for plugins after Reveal.initialize()
-	],
+    ],
+    // parallaxBackgroundImage: 'img/background.jpg',
+    // parallaxBackgroundSize: '3648px 2056px',
 });
 
 // Load plugins here
@@ -25,4 +27,4 @@ Reveal.initialize({
 // require('imports-loader?Reveal=reveal.js/js/reveal!reveal.js/plugin/notes/notes'); // NOT WORKING!!
 require('imports-loader?Reveal=reveal.js/js/reveal!reveal.js/plugin/zoom-js/zoom');
 
-bar();
+main.foo();
