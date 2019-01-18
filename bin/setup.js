@@ -45,7 +45,6 @@ prompt.get(schema, function (err, result) {
 
         indexData = indexData.replace(/{Projektname}/g, result.name);
         indexData = indexData.replace(/{Projektbeschreibung}/g, result.description);
-        console.log(indexData);
 
         fs.writeFile(__dirname+'/../index.html', indexData, 'utf8', function (err) {
             if (err) {
