@@ -8,6 +8,7 @@
     "deploy": "webpack -p",
     "develop": "npm-run-all --parallel watch server",
     "export": "npm-run-all --sequential deploy zip",
+    "postinstall": "npm-run-all setup",
     "server": "http-server ./ -o --utc -a localhost --port 8080",
     "setup": "node ./bin/setup.js",
     "start": "npm-run-all --sequential build develop",

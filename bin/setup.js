@@ -22,17 +22,37 @@ var schema = {
 prompt.start();
 
 prompt.get(schema, function (err, result) {
+    prompt.stop();
     package.name = result.name;
     package.description = result.description;
 
-    var data = JSON.stringify(package, null, 2)+"\n";
+    var packageData = JSON.stringify(package, null, 2)+"\n";
 
-    fs.writeFile(__dirname+'/../package.json', data, function (err) {
+    // edit package.json
+    fs.writeFile(__dirname+'/../package.json', packageData, function (err) {
         if (err) {
             return console.log(err);
         }
 
         console.log('editing package.json');
-        // process.exit();
+    });
+
+    // Edit index.html
+    fs.readFile(__dirname+'/../index.html', 'utf8', function (err, indexData) {
+        if (err) {
+            return console.log(err);
+        }
+
+        indexData = indexData.replace(/{Projektname}/g, result.name);
+        indexData = indexData.replace(/{Projektbeschreibung}/g, result.description);
+        console.log(indexData);
+
+        fs.writeFile(__dirname+'/../index.html', indexData, 'utf8', function (err) {
+            if (err) {
+                return console.log(err);
+            }
+
+            console.log('editing index.html');
+        });
     });
 });
