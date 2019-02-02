@@ -19,9 +19,20 @@ var schema = {
     }
 };
 
-prompt.start();
+prompt.start({noHandleSIGINT: true});
+
+// Do nothing on ctrl+c
+process.on('SIGINT', function() {
+    process.exit();
+});
 
 prompt.get(schema, function (err, result) {
+    // Do nothing on ctrl+c
+    if (err) {
+        console.log('Abort');
+        process.exit();
+    }
+
     prompt.stop();
     package.name = result.name;
     package.description = result.description;
