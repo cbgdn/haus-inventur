@@ -1,5 +1,4 @@
 import main from './main';
-import 'reveal.js/lib/js/head.min.js';
 import Reveal from 'reveal.js';
 
 import 'reveal.js/css/reveal.css';
