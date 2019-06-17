@@ -4,6 +4,16 @@
 		<meta charset="utf-8">
 		<title>{Projektname}</title>
 		<link rel="stylesheet" href="dist/main.css">
+		<script>
+			// Add `print-pdf` into querystring to open the presentation for PDF export
+			if (window.location.search.match( /print-pdf/gi )) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'node_modules/reveal.js/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
 	</head>
 	<body>
 		<div class="reveal">

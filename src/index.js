@@ -11,12 +11,14 @@ import 'reveal.js/lib/css/zenburn.css';
 Reveal.initialize({
     history: true,
     transition: 'slide', // none/fade/slide/convex/concave/zoom
+    hideAddressBar: true,
     dependencies: [
         // DONT LOAD PLUGINS HERE!
         // use require() for plugins after Reveal.initialize()
     ],
-    // parallaxBackgroundImage: 'img/background.jpg',
+    // parallaxBackgroundImage: (window.location.search.match( /print-pdf/gi )) ? null :'img/background.jpg',
     // parallaxBackgroundSize: '3648px 2056px',
+    pdfSeparateFragments: false,
 });
 
 // Load plugins here
@@ -26,4 +28,4 @@ Reveal.initialize({
 // require('imports-loader?Reveal=reveal.js/js/reveal!reveal.js/plugin/notes/notes'); // NOT WORKING!!
 require('imports-loader?Reveal=reveal.js/js/reveal!reveal.js/plugin/zoom-js/zoom');
 
-main.foo();
+main.run();

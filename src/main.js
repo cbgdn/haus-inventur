@@ -1,7 +1,7 @@
-function bar() {
+function doSomething() {
     // Write your code here
 }
 
 export default {
-    foo: bar,
+    run: doSomething,
 }
