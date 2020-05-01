@@ -22,14 +22,14 @@
     "archiver": "^3.1.1",
     "css-loader": "^1.0.1",
     "file-loader": "^2.0.0",
-    "http-server": "^0.11.1",
+    "http-server": "^0.12.3",
     "imports-loader": "^0.8.0",
     "mini-css-extract-plugin": "^0.4.5",
     "npm-run-all": "^4.1.5",
     "prompt": "^1.0.0",
-    "reveal.js": "^3.8.0",
+    "reveal.js": "^3.9.2",
     "url-loader": "^1.1.2",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
