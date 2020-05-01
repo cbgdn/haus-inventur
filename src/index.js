@@ -38,6 +38,11 @@ Reveal.addEventListener( 'slidechanged', async function( event ) {
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
+    var prevCountdown = event.previousSlide.querySelector('.countdown');
+    if (prevCountdown) {
+        prevCountdown.innerHTML = '?';
+    }
+
     var countdownElem = event.currentSlide.querySelector('.countdown');
     if (! countdownElem) {
         return;
