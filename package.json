@@ -1,7 +1,7 @@
 {
-  "name": "revealjs-boilerplate",
+  "name": "haus-inventur",
   "version": "1.0.0",
-  "description": "Create presentations with reveal.js",
+  "description": "Gruppenspiel, bei dem schnell Dinge aus dem Haushalt gefunden werden müssen",
   "main": "index.js",
   "scripts": {
     "build": "webpack -d",
