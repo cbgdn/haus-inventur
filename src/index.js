@@ -29,4 +29,33 @@ Reveal.initialize({
 // require('imports-loader?Reveal=reveal.js/js/reveal!reveal.js/plugin/notes/notes'); // NOT WORKING!!
 require('imports-loader?Reveal=reveal.js/js/reveal!reveal.js/plugin/zoom-js/zoom');
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Countdown anzeigen, bevor neue Gegenstände gezeigt werden
+Reveal.addEventListener( 'slidechanged', async function( event ) {
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    var countdownElem = event.currentSlide.querySelector('.countdown');
+    if (! countdownElem) {
+        return;
+    }
+
+    var target = countdownElem.dataset.value;
+    var counter = 3;
+    countdownElem.classList.remove('scaled');
+
+    while (counter > 0) {
+        countdownElem.innerHTML = counter;
+        countdownElem.classList.add('scaled');
+        counter--;
+        await sleep(1000);
+    }
+
+    countdownElem.classList.remove('scaled');
+    countdownElem.innerHTML = target;
+} );
+
 main.run();
